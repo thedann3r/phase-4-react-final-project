@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../App.css"
 // import Search from "./Search";
-// import Footer from "./Footer";
 import AirplaneList from "./List";
 import NewPlane from "./New";
 

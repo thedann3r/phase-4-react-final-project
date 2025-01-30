@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
+function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
   const [update,setUpdate] =useState({
-    name:"",
-    planeCompany_id:0
+    owners_id:"",
+    planes_id:0
   })
   function handleChange(e){
       e.preventDefault()
@@ -17,7 +17,7 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
   } 
   function handleUpdate(e){
     e.preventDefault()
-    fetch(`http://127.0.0.1:5000/planes/${id}`, {
+    fetch(`http://127.0.0.1:5000/planeowners/${id}`, {
        method:"PATCH",
        headers:{
         "Content-Type":"application/json"
@@ -28,23 +28,23 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
     .then((updated) => {
       let updatedPlane = planes.map(craft => {
         if(craft.id === id){
-          craft.name = updated.name
-          craft.planeCompany_id = updated.planeCompany_id
+          craft.owners_id = updated.owners_id
+          craft.planes_id = updated.planes_id
         }
         return craft
       })
       setPlanes(updatedPlane)
       setUpdate({
-        'name':"",
-        "planeCompany_id":0
+        'owners_id':"",
+        "planes_id":0
       })
-      alert(`poof ${name} updated successfully!!`)
+      alert('Updated successfully!!')
     })
     .catch(err => console.log(err))
   }
 
   function handleDelete(){
-    fetch(`http://127.0.0.1:5000/planes/${id}`, {
+    fetch(`http://127.0.0.1:5000/planeowners/${id}`, {
       method:"DELETE",
       headers:{
         "Content-Type":"application/json"
@@ -54,17 +54,17 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
     .then(() => {
       let remainder = planes.filter(fins => fins.id !== id)
       setPlanes(remainder)
-      alert(`Poof! ${name} is gone!👋🏽`)
+      alert('Deleted successfully!')
     })
     .catch(err => console.log(err))
   }
     return(
         <div id="content">
-            <h2>{name}</h2>
-            <h3>{planeCompany_id}</h3>
+            <h2>{owners_id}</h2>
+            <h3>{planes_id}</h3>
               <form id="new" onSubmit={handleUpdate}>
-                <input className="input" type="text" name="name" placeholder="Name" value={update.name} required onChange={handleChange}/><br />
-                <input className="input" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={update.planeCompany_id} required onChange={handleChange}/><br />
+                <input className="input" type="text" name="owners_id" placeholder="owners_id" value={update.owners_id} required onChange={handleChange}/><br />
+                <input className="input" type="number" name="planes_id" placeholder="planes_id" value={update.planes_id} required onChange={handleChange}/><br />
                 
                 <button id="add" type="submit">UPDATE!</button>
             </form>
@@ -73,4 +73,4 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
     )
 }
 
-export default AirplaneItems
+export default PlaneOwnerItems

@@ -8,7 +8,7 @@ function AirplaneList({planes,setPlanes}){
             id={plane.id}
             name={plane.name}
             founded={plane.founded}
-            planes={planes}
+            planes={planes} 
             setPlanes={setPlanes}
             />
           )):null}

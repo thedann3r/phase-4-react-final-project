@@ -1,9 +1,9 @@
 import { useState } from "react"
 
-function NewPlane({planes,setPlanes}){
+function NewOwnership({planes,setPlanes}){
     const [newPlane,setNewPlane] = useState({
-        name:"",
-        planeCompany_id:0
+        planes_id:0,
+        owners_id:0
     })
     function handleChange(e){
         e.preventDefault()
@@ -17,7 +17,7 @@ function NewPlane({planes,setPlanes}){
     }
     function handleSubmit(e){
        e.preventDefault()
-       fetch("http://127.0.0.1:5000/planes", {
+       fetch("http://127.0.0.1:5000/planeowners", {
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -27,23 +27,23 @@ function NewPlane({planes,setPlanes}){
        .then(resp => resp.json())
        .then(poisson => {setPlanes([...planes,poisson])
         setNewPlane({
-            name:"",
-            planeCompany_id:0
+            planes_id:"",
+            owners_id:0
         })
-        alert(`Poof ${newPlane.name} created with success`)
+        alert('Created successfully!')
        })
        .catch(error => console.log(error))
     }
     return(
         <div id="newness">
-          <h2>New Airplanes</h2>
+          <h2>New Ownership</h2>
             <form id="new" onSubmit={handleSubmit}>
-                <input className="input" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
-                <input className="input" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={newPlane.planeCompany_id} required onChange={handleChange}/>
+                <input className="input" type="number" name="planes_id" placeholder="planes_id" value={newPlane.planes_id} required onChange={handleChange}/>
+                <input className="input" type="number" name="owners_id" placeholder="owners_id" value={newPlane.owners_id} required onChange={handleChange}/>
                 <button id="add" type="submit">ADD!</button>
             </form>
         </div>
     )
 }
 
-export default NewPlane
+export default NewOwnership

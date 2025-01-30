@@ -32,15 +32,15 @@ function NewPlane({planes,setPlanes}){
         })
         alert(`Poof ${newPlane.name} created with success`)
        })
-       .catch(error => console.log(error))
+       .catch(error => console.log(error)) 
     }
     return(
-        <div id="newness">
-          <h2>New Company</h2>
+        <div className="newness">
+          <h1>New Company</h1>
             <form id="new" onSubmit={handleSubmit}>
-                <input className="input" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
-                <input className="input" type="number" name="founded" placeholder="founded" value={newPlane.founded} required onChange={handleChange}/>
-                <button id="add" type="submit">ADD!</button>
+                <input className="new" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
+                <input className="new" type="number" name="founded" placeholder="founded" value={newPlane.founded} required onChange={handleChange}/>
+                <button className="add" type="submit">ADD!</button>
             </form>
         </div>
     )

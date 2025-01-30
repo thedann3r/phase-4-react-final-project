@@ -4,7 +4,7 @@ import "../App.css"
 // import Footer from "./Footer";
 import AirplaneList from "./List";
 import NewPlane from "./New";
-
+ 
 function Company(){ 
   const [planes,setPlanes] = useState([])
   // const [searchFish,setSearchFish] = useState("")

@@ -3,13 +3,13 @@ import "../App.css"
 // import Search from "./Search";
 // import Footer from "./Footer";
 import AirplaneList from "./List";
-import NewPlane from "./New";
+import NewOwnership from "./New";
 
-function Airplanes(){ 
+function Ownership(){ 
   const [planes,setPlanes] = useState([])
   // const [searchFish,setSearchFish] = useState("")
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/planes")
+    fetch("http://127.0.0.1:5000/planeowners")
     .then(res => res.json())
     .then(data => {
       setPlanes(data)
@@ -21,11 +21,11 @@ function Airplanes(){
 
   return(
     <>
-     <NewPlane planes={planes} setPlanes={setPlanes}/>
+     <NewOwnership planes={planes} setPlanes={setPlanes}/>
      {/* <Search onSearch={setSearchFish}/> */}
      <AirplaneList planes={planes} setPlanes={setPlanes}/>
     </>
   )
 }
 
-export default Airplanes
+export default Ownership

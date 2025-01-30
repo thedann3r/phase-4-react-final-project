@@ -1,13 +1,14 @@
-import AirplaneItems from "./Items"
+import PlaneOwnerItems from "./Items"
+
 function AirplaneList({planes,setPlanes}){
     return(
        <div id="container">
           {planes.length >0? planes.map(plane => (
-            <AirplaneItems 
+            <PlaneOwnerItems 
             key={plane.id}
             id={plane.id}
-            name={plane.name}
-            planeCompany_id={plane.planeCompany_id}
+            owners_id={plane.owners_id}
+            planes_id={plane.planes_id}
             planes={planes}
             setPlanes={setPlanes}
             />
