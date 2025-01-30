@@ -34,10 +34,10 @@ function NewOwner({owners,setOwners}){
     }
     return(
         <div id="newness">
-          <h2>New Owner</h2>
+            <h2 className="newer">New Owner</h2>
             <form id="new" onSubmit={handleSubmit}>
-                <input className="input" type="text" name="name" placeholder="Name" value={newOwner.name} required onChange={handleChange}/>
-                <button id="add" type="submit">ADD!</button>
+                <input className="new" type="text" name="name" placeholder="Name" value={newOwner.name} required onChange={handleChange}/>
+                <button className="add" type="submit">ADD!</button>
             </form>
         </div>
     )

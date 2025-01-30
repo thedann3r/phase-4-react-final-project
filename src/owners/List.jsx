@@ -12,7 +12,7 @@ function OwnerList({owners,setOwners}){
             setOwners={setOwners}
             />
           )):null}
-       </div>
+       </div> 
     )
 }
 

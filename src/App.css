@@ -134,4 +134,55 @@
   padding: 7px;
   margin: 10px;
 }
+.newer{
+  color: rgb(143, 73, 73);
+  text-decoration: underline;
+}
+.mainH{
+  color: black;
+  text-decoration: underline;
+}
+#opener{
+  border-left: 6px solid black;
+  border-right: 6px solid black;
+  height: auto;
+  width: 650px;
+  padding: 25px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.opener {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+#homeB{
+  width: 140px;
+  font-size: 20px;
+  padding: 7px;
+}
+#navigation{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border: 3px black solid;
+  padding: 8px;
+  border-radius: 11px; 
+  color: white;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#navigation a{
+  color: white;
+}
+#navigation a:hover {
+  background-color: rgb(255, 255, 255, 0.3);
+  height: 25px;
+  border: 2px solid white;
+  border-radius: 5px;
+  width: auto;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+
 

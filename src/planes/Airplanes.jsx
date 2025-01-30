@@ -20,6 +20,7 @@ function Airplanes(){
 
   return(
     <>
+    <h1 className="mainH">🛫Aerospace plane names🛫</h1>
      <NewPlane planes={planes} setPlanes={setPlanes}/>
      {/* <Search onSearch={setSearchFish}/> */}
      <AirplaneList planes={planes} setPlanes={setPlanes}/>

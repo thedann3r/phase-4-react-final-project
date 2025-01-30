@@ -21,6 +21,7 @@ function Company(){
 
   return(
     <>
+    <h1 className="mainH">🛫Aerospace Manufucturers🛫</h1>
      <NewPlane planes={planes} setPlanes={setPlanes}/>
      {/* <Search onSearch={setSearchFish}/> */}
      <AirplaneList planes={planes} setPlanes={setPlanes}/>

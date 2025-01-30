@@ -16,4 +16,4 @@ function AirplaneList({planes,setPlanes}){
     )
 }
 
-export default AirplaneList
+export default AirplaneList 

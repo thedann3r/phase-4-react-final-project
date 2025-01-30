@@ -36,13 +36,13 @@ function NewPlane({planes,setPlanes}){
     }
     return(
         <div className="newness">
-          <h1>New Company</h1>
+          <h2 className="newer">New Company</h2>
             <form id="new" onSubmit={handleSubmit}>
                 <input className="new" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
                 <input className="new" type="number" name="founded" placeholder="founded" value={newPlane.founded} required onChange={handleChange}/>
                 <button className="add" type="submit">ADD!</button>
             </form>
-        </div>
+        </div> 
     )
 }
 

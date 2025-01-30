@@ -30,7 +30,7 @@ function AirplaneItems({name,founded, id, planes,setPlanes}){
         if(craft.id === id){
           craft.name = updated.name
           craft.founded = updated.founded
-        }
+        } 
         return craft
       })
       setPlanes(updatedPlane)

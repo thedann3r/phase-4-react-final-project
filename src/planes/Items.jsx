@@ -31,7 +31,7 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
           craft.name = updated.name
           craft.planeCompany_id = updated.planeCompany_id
         }
-        return craft
+        return craft 
       })
       setPlanes(updatedPlane)
       setUpdate({
@@ -58,17 +58,19 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
     })
     .catch(err => console.log(err))
   }
-    return(
-        <div id="content">
-            <h2>{name}</h2>
+    return( 
+      <div id="content">
+            <h2 className="mini">name:</h2>
+            <h2><strong>{name}</strong></h2>
+            <h3 className="mini">Manufucturing Id:</h3>
             <h3>{planeCompany_id}</h3>
               <form id="new" onSubmit={handleUpdate}>
                 <input className="input" type="text" name="name" placeholder="Name" value={update.name} required onChange={handleChange}/><br />
                 <input className="input" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={update.planeCompany_id} required onChange={handleChange}/><br />
                 
-                <button id="add" type="submit">UPDATE!</button>
+                <button className="update" type="submit">update!</button>
             </form>
-              <button id="delete" onClick={handleDelete}>Delete</button>
+            <button className="delete" onClick={handleDelete}>delete</button>
         </div>
     )
 }

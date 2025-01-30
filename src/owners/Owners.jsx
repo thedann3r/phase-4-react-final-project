@@ -10,7 +10,7 @@ function Owners(){
   // const [searchFish,setSearchFish] = useState("")
   useEffect(() => {
     fetch("http://127.0.0.1:5000/owners")
-    .then(res => res.json())
+    .then(res => res.json()) 
     .then(data => {
       setOwners(data)
     })
@@ -21,6 +21,7 @@ function Owners(){
 
   return(
     <>
+    <h1 className="mainH">🛫Aerospace plane Owners🛫</h1>
      <NewOwner owners={owners} setOwners={setOwners}/>
      {/* <Search onSearch={setSearchFish}/> */}
      <OwnerList owners={owners} setOwners={setOwners}/>

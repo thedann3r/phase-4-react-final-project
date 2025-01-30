@@ -46,7 +46,7 @@ function OwnerItems({name, id,owners,setOwners}){
       headers:{
         "Content-Type":"application/json"
       }
-    })
+    }) 
     .then(res => res.json())
     .then(() => {
       let remainder = owners.filter(fins => fins.id !== id)
@@ -57,12 +57,13 @@ function OwnerItems({name, id,owners,setOwners}){
   }
     return(
         <div id="content">
-            <h2>{name}</h2>
+             <h2 className="mini">name:</h2>
+             <h2><strong>{name}</strong></h2>
               <form id="new" onSubmit={handleUpdate}>
                 <input className="input" type="text" name="name" placeholder="Name" value={update.name} required onChange={handleChange}/><br />
-                <button id="add" type="submit">UPDATE!</button>
+                <button className="update" type="submit">update!</button>
             </form>
-              <button id="delete" onClick={handleDelete}>Delete</button>
+            <button className="delete" onClick={handleDelete}>delete</button>
         </div>
     )
 }

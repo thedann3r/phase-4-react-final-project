@@ -36,14 +36,14 @@ function NewPlane({planes,setPlanes}){
     }
     return(
         <div id="newness">
-          <h2>New Airplanes</h2>
+          <h2 className="newer">New Company</h2>
             <form id="new" onSubmit={handleSubmit}>
-                <input className="input" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
-                <input className="input" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={newPlane.planeCompany_id} required onChange={handleChange}/>
-                <button id="add" type="submit">ADD!</button>
+                <input className="new" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
+                <input className="new" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={newPlane.planeCompany_id} required onChange={handleChange}/>
+                <button className="add" type="submit">ADD!</button>
             </form>
         </div>
     )
 }
-
+ 
 export default NewPlane
