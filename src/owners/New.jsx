@@ -12,11 +12,11 @@ function NewOwner({owners,setOwners}){
         setNewOwner({
             ...newOwner,
             [name]:value
-        })
+        }) 
     }
     function handleSubmit(e){
        e.preventDefault()
-       fetch("http://127.0.0.1:5000/owners", {
+       fetch("https://phase-4-final-project-7azq.onrender.com/owners", {
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -33,7 +33,7 @@ function NewOwner({owners,setOwners}){
        .catch(error => console.log(error))
     }
     return(
-        <div id="newness">
+        <div className="newness">
             <h2 className="newer">New Owner</h2>
             <form id="new" onSubmit={handleSubmit}>
                 <input className="new" type="text" name="name" placeholder="Name" value={newOwner.name} required onChange={handleChange}/>

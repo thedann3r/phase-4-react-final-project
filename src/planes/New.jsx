@@ -17,7 +17,7 @@ function NewPlane({planes,setPlanes}){
     }
     function handleSubmit(e){
        e.preventDefault()
-       fetch("http://127.0.0.1:5000/planes", {
+       fetch("https://phase-4-final-project-7azq.onrender.com/planes", {
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -35,12 +35,12 @@ function NewPlane({planes,setPlanes}){
        .catch(error => console.log(error))
     }
     return(
-        <div id="newness">
+        <div className="newness">
           <h2 className="newer">New Company</h2>
             <form id="new" onSubmit={handleSubmit}>
                 <input className="new" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
                 <input className="new" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={newPlane.planeCompany_id} required onChange={handleChange}/>
-                <button className="add" type="submit">ADD!</button>
+                <button className="add" type="submit">Add</button>
             </form>
         </div>
     )

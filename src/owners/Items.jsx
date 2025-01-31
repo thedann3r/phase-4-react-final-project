@@ -16,7 +16,7 @@ function OwnerItems({name, id,owners,setOwners}){
   } 
   function handleUpdate(e){
     e.preventDefault()
-    fetch(`http://127.0.0.1:5000/owners/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/owners/${id}`, {
        method:"PATCH",
        headers:{
         "Content-Type":"application/json"
@@ -41,7 +41,7 @@ function OwnerItems({name, id,owners,setOwners}){
   }
 
   function handleDelete(){
-    fetch(`http://127.0.0.1:5000/owners/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/owners/${id}`, {
       method:"DELETE",
       headers:{
         "Content-Type":"application/json"
@@ -57,13 +57,13 @@ function OwnerItems({name, id,owners,setOwners}){
   }
     return(
         <div id="content">
-             <h2 className="mini">name:</h2>
-             <h2><strong>{name}</strong></h2>
+             <h2 className="mini">Name</h2>
+             <h2 className="cont"><strong>{name}</strong></h2>
               <form id="new" onSubmit={handleUpdate}>
                 <input className="input" type="text" name="name" placeholder="Name" value={update.name} required onChange={handleChange}/><br />
-                <button className="update" type="submit">update!</button>
+                <button className="update" type="submit">Update</button>
             </form>
-            <button className="delete" onClick={handleDelete}>delete</button>
+            <button className="delete" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

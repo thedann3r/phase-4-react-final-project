@@ -60,15 +60,17 @@ function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
   }
     return(
         <div id="content">
-            <h2>{owners_id}</h2>
-            <h3>{planes_id}</h3>
+          <h2 className="mini">owners's Id</h2>
+            <h2 className="cont">{owners_id}</h2>
+            <h2 className="mini">plane's Id</h2>
+            <h3 className="cont">{planes_id}</h3>
               <form id="new" onSubmit={handleUpdate}>
                 <input className="input" type="text" name="owners_id" placeholder="owners_id" value={update.owners_id} required onChange={handleChange}/><br />
                 <input className="input" type="number" name="planes_id" placeholder="planes_id" value={update.planes_id} required onChange={handleChange}/><br />
                 
-                <button id="add" type="submit">UPDATE!</button>
+                <button className="update" type="submit">Update</button>
             </form>
-              <button id="delete" onClick={handleDelete}>Delete</button>
+              <button className="delete" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

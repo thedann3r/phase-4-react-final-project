@@ -17,7 +17,7 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
   } 
   function handleUpdate(e){
     e.preventDefault()
-    fetch(`http://127.0.0.1:5000/planes/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/planes/${id}`, {
        method:"PATCH",
        headers:{
         "Content-Type":"application/json"
@@ -44,7 +44,7 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
   }
 
   function handleDelete(){
-    fetch(`http://127.0.0.1:5000/planes/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/planes/${id}`, {
       method:"DELETE",
       headers:{
         "Content-Type":"application/json"
@@ -60,17 +60,17 @@ function AirplaneItems({name,planeCompany_id, id, planes,setPlanes}){
   }
     return( 
       <div id="content">
-            <h2 className="mini">name:</h2>
-            <h2><strong>{name}</strong></h2>
-            <h3 className="mini">Manufucturing Id:</h3>
-            <h3>{planeCompany_id}</h3>
+            <h2 className="mini">name</h2>
+            <h2 className="cont"><strong>{name}</strong></h2>
+            <h3 className="mini">Manufucturing Id</h3>
+            <h3 className="cont">{planeCompany_id}</h3>
               <form id="new" onSubmit={handleUpdate}>
                 <input className="input" type="text" name="name" placeholder="Name" value={update.name} required onChange={handleChange}/><br />
                 <input className="input" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={update.planeCompany_id} required onChange={handleChange}/><br />
                 
-                <button className="update" type="submit">update!</button>
+                <button className="update" type="submit">Update</button>
             </form>
-            <button className="delete" onClick={handleDelete}>delete</button>
+            <button className="delete" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

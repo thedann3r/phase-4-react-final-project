@@ -17,7 +17,7 @@ function AirplaneItems({name,founded, id, planes,setPlanes}){
   } 
   function handleUpdate(e){
     e.preventDefault()
-    fetch(`http://127.0.0.1:5000/company/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/company/${id}`, {
        method:"PATCH",
        headers:{
         "Content-Type":"application/json"
@@ -44,7 +44,7 @@ function AirplaneItems({name,founded, id, planes,setPlanes}){
   }
 
   function handleDelete(){
-    fetch(`http://127.0.0.1:5000/company/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/company/${id}`, {
       method:"DELETE",
       headers:{
         "Content-Type":"application/json"
@@ -57,20 +57,20 @@ function AirplaneItems({name,founded, id, planes,setPlanes}){
       alert(`Poof! ${name} is gone!👋🏽`)
     })
     .catch(err => console.log(err))
-  }
+  }  
     return(
         <div id="content">
-            <h2 className="mini">name:</h2>
-            <h2><strong>{name}</strong></h2>
-            <h3 className="mini">Year founded:</h3>
-            <h2><strong>{founded}</strong></h2>
+            <h2 className="mini">Name</h2>
+            <h2 className="cont"><strong>{name}</strong></h2>
+            <h3 className="mini">Year founded</h3>
+            <h2 className="cont"><strong>{founded}</strong></h2>
               <form id="new" onSubmit={handleUpdate}>
                 <input className="input" type="text" name="name" placeholder="Name" value={update.name} required onChange={handleChange}/><br />
                 <input className="input" type="number" name="founded" placeholder="founded" value={update.founded} required onChange={handleChange}/><br />
                 
-                <button className="update" type="submit">update!</button>
-            </form>
-              <button className="delete" onClick={handleDelete}>delete</button>
+                <button className="update" type="submit">Update</button>
+              </form>
+              <button className="delete" onClick={handleDelete}>Delete</button>
         </div>
     )
 }

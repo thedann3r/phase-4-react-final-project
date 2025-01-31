@@ -35,12 +35,12 @@ function NewOwnership({planes,setPlanes}){
        .catch(error => console.log(error))
     }
     return(
-        <div id="newness">
-          <h2>New Ownership</h2>
+        <div className="newness">
+          <h2 className="newer">New Ownership</h2>
             <form id="new" onSubmit={handleSubmit}>
-                <input className="input" type="number" name="planes_id" placeholder="planes_id" value={newPlane.planes_id} required onChange={handleChange}/>
-                <input className="input" type="number" name="owners_id" placeholder="owners_id" value={newPlane.owners_id} required onChange={handleChange}/>
-                <button id="add" type="submit">ADD!</button>
+                <input className="new"  type="number" name="planes_id" placeholder="planes_id" value={newPlane.planes_id} required onChange={handleChange}/>
+                <input className="new"  type="number" name="owners_id" placeholder="owners_id" value={newPlane.owners_id} required onChange={handleChange}/>
+                <button className="add" type="submit">Add</button>
             </form>
         </div>
     )

@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "../App.css"
-// import Search from "./Search";
 import AirplaneList from "./List";
 import NewPlane from "./New";
 
 function Airplanes(){ 
   const [planes,setPlanes] = useState([])
-  // const [searchFish,setSearchFish] = useState("")
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/planes")
+    fetch("https://phase-4-final-project-7azq.onrender.com/planes")
     .then(res => res.json())
     .then(data => {
       setPlanes(data)
@@ -16,13 +14,10 @@ function Airplanes(){
     .catch(err => console.log(err))
   },[])
 
-  // const displayFish = fish.filter((fishery) => `${fishery.name}`.toLowerCase().includes(searchFish.toLowerCase()))
-
   return(
     <>
-    <h1 className="mainH">🛫Aerospace plane names🛫</h1>
+    <h1 className="mainH">🛫Aerospace plane names</h1>
      <NewPlane planes={planes} setPlanes={setPlanes}/>
-     {/* <Search onSearch={setSearchFish}/> */}
      <AirplaneList planes={planes} setPlanes={setPlanes}/>
     </>
   )

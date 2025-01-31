@@ -17,7 +17,7 @@ function NewPlane({planes,setPlanes}){
     }
     function handleSubmit(e){
        e.preventDefault()
-       fetch("http://127.0.0.1:5000/company", {
+       fetch("https://phase-4-final-project-7azq.onrender.com/company", {
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -28,7 +28,7 @@ function NewPlane({planes,setPlanes}){
        .then(poisson => {setPlanes([...planes,poisson])
         setNewPlane({
             name:"",
-            founded:0
+            founded:0 
         })
         alert(`Poof ${newPlane.name} created with success`)
        })
@@ -40,8 +40,8 @@ function NewPlane({planes,setPlanes}){
             <form id="new" onSubmit={handleSubmit}>
                 <input className="new" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
                 <input className="new" type="number" name="founded" placeholder="founded" value={newPlane.founded} required onChange={handleChange}/>
-                <button className="add" type="submit">ADD!</button>
-            </form>
+                <button className="add" type="submit">Add</button>
+            </form> 
         </div> 
     )
 }
