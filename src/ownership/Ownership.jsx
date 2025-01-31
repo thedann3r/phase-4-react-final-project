@@ -6,7 +6,7 @@ import NewOwnership from "./New";
 function Ownership(){ 
   const [planes,setPlanes] = useState([])
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/planeowners")
+    fetch("https://phase-4-final-project-7azq.onrender.com/ownership")
     .then(res => res.json())
     .then(data => {
       setPlanes(data)
@@ -14,7 +14,7 @@ function Ownership(){
     .catch(err => console.log(err))
   },[])
 
-  return(
+  return( 
     <>
     <h1 className="mainH">🛫New Plane Ownership</h1>
      <NewOwnership planes={planes} setPlanes={setPlanes}/>

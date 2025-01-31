@@ -36,7 +36,7 @@ function NewPlane({planes,setPlanes}){
     }
     return(
         <div className="newness">
-          <h2 className="newer">New Company</h2>
+          <h2 className="newer">New Airplane</h2>
             <form id="new" onSubmit={handleSubmit}>
                 <input className="new" type="text" name="name" placeholder="Name" value={newPlane.name} required onChange={handleChange}/>
                 <input className="new" type="number" name="planeCompany_id" placeholder="planeCompany_id" value={newPlane.planeCompany_id} required onChange={handleChange}/>

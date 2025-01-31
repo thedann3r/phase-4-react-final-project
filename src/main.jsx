@@ -9,6 +9,7 @@ import Company from './company/Company.jsx'
 import Home from './Components/Home.jsx'
 import Airplanes from './planes/Airplanes.jsx'
 import Owners from './owners/Owners.jsx'
+import Ownership from './ownership/Ownership.jsx'
 
 const router = createBrowserRouter ([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter ([
       {
         path:"/owners",
         element:<Owners />
+      },
+      {
+        path:"/ownership",
+        element:<Ownership />
       },
       {
         path:"/contacts",

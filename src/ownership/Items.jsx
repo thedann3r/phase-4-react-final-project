@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
   const [update,setUpdate] =useState({
-    owners_id:"",
+    owners_id:0,
     planes_id:0
   })
   function handleChange(e){
@@ -17,7 +17,7 @@ function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
   } 
   function handleUpdate(e){
     e.preventDefault()
-    fetch(`http://127.0.0.1:5000/planeowners/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/ownership/${id}`, {
        method:"PATCH",
        headers:{
         "Content-Type":"application/json"
@@ -35,7 +35,7 @@ function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
       })
       setPlanes(updatedPlane)
       setUpdate({
-        'owners_id':"",
+        'owners_id':0,
         "planes_id":0
       })
       alert('Updated successfully!!')
@@ -44,7 +44,7 @@ function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
   }
 
   function handleDelete(){
-    fetch(`http://127.0.0.1:5000/planeowners/${id}`, {
+    fetch(`https://phase-4-final-project-7azq.onrender.com/ownership/${id}`, {
       method:"DELETE",
       headers:{
         "Content-Type":"application/json"
@@ -60,12 +60,14 @@ function PlaneOwnerItems({owners_id,planes_id, id, planes,setPlanes}){
   }
     return(
         <div id="content">
-          <h2 className="mini">owners's Id</h2>
+          <h2 className="mini">owners's Id: </h2>
             <h2 className="cont">{owners_id}</h2>
-            <h2 className="mini">plane's Id</h2>
+            <h2 className="mini">plane's Id: </h2>
             <h3 className="cont">{planes_id}</h3>
               <form id="new" onSubmit={handleUpdate}>
+                <label className="label">owner id: </label>
                 <input className="input" type="text" name="owners_id" placeholder="owners_id" value={update.owners_id} required onChange={handleChange}/><br />
+                <label className="label">planes id: </label>
                 <input className="input" type="number" name="planes_id" placeholder="planes_id" value={update.planes_id} required onChange={handleChange}/><br />
                 
                 <button className="update" type="submit">Update</button>

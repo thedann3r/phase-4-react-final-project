@@ -17,7 +17,7 @@ function NewOwnership({planes,setPlanes}){
     }
     function handleSubmit(e){
        e.preventDefault()
-       fetch("http://127.0.0.1:5000/planeowners", {
+       fetch("https://phase-4-final-project-7azq.onrender.com/ownership", {
         method:"POST",
         headers:{
             "Content-Type":"application/json"
@@ -27,7 +27,7 @@ function NewOwnership({planes,setPlanes}){
        .then(resp => resp.json())
        .then(poisson => {setPlanes([...planes,poisson])
         setNewPlane({
-            planes_id:"",
+            planes_id:0,
             owners_id:0
         })
         alert('Created successfully!')
@@ -38,8 +38,10 @@ function NewOwnership({planes,setPlanes}){
         <div className="newness">
           <h2 className="newer">New Ownership</h2>
             <form id="new" onSubmit={handleSubmit}>
-                <input className="new"  type="number" name="planes_id" placeholder="planes_id" value={newPlane.planes_id} required onChange={handleChange}/>
+            <label className="label">owner id: </label>
                 <input className="new"  type="number" name="owners_id" placeholder="owners_id" value={newPlane.owners_id} required onChange={handleChange}/>
+            <label className="label">plane id: </label>   
+                <input className="new"  type="number" name="planes_id" placeholder="planes_id" value={newPlane.planes_id} required onChange={handleChange}/>
                 <button className="add" type="submit">Add</button>
             </form>
         </div>
