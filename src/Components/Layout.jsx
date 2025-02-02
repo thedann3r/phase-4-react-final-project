@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "./Navbar";
-import Home from "./Home";
 
 function Layout(){
     return(
@@ -8,7 +7,6 @@ function Layout(){
           <Navbar /> 
           <div>
              <Outlet />
-             < Home />
           </div>      
         </div>
     )
